@@ -32,7 +32,7 @@ const Banner = () => {
     <div>
       {/* <!-- Carousel Body --> */}
       <div
-        className="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl"
+        className="relative rounded-lg block md:flex items-center bg-gray-100 shadow-lg"
         style={{ minHeight: "19rem" }}
       >
         <div
@@ -44,7 +44,7 @@ const Banner = () => {
             src={images[slideIndex]}
             alt=""
           />
-          <div className="absolute inset-0 w-full h-full bg-indigo-900 opacity-75"></div>
+          <div className="absolute inset-0 w-full h-full bg-black opacity-50"></div>
           <div className="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
             <svg
               className="w-full h-24"
@@ -62,7 +62,7 @@ const Banner = () => {
             </svg>
           </div>
         </div>
-        <div className="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+        <div className="w-full md:w-3/5 h-full flex items-center bg-white-100 rounded-lg">
           <div className="p-12 md:pr-24 md:pl-16 md:py-12">
             <p className="text-gray-600">
               <span className="text-gray-900 text-justify">BloomingDale</span> is a Bangladesh-based

@@ -3,6 +3,7 @@ import './App.css';
 import Blog from './components/pages/Blog/Blog';
 import Home from './components/pages/Home/Home/Home';
 import Header from './components/Shared/Header/Header';
+import Footer from './components/Shared/Footer/Footer';
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/blog' element={<Blog></Blog>}></Route>
     </Routes>
+    <Footer></Footer>
     </>
   );
 }
