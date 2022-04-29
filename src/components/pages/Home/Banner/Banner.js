@@ -54,8 +54,8 @@ const Banner = () => {
               <text
                 x="25"
                 y="55"
-                font-family="'Lucida Grande', sans-serif"
-                font-size="40"
+                fontFamily="'Lucida Grande', sans-serif"
+                fontSize="40"
               >
                 BloomingDale
               </text>
@@ -69,16 +69,13 @@ const Banner = () => {
               fashion stocker that has nearly doubled in size since last year.
               Since last year Bangladesh is facing a lot of diffcultites in stocking foreign orders untill it's deliverd thats where the <strong>BloomingDale</strong> came into play. They provided a significant number of warehouse in the country.
             </p>
-            <a
-              className="flex items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900"
-              href=""
-            >
+            
               <span>
-                {" "}
-                <a href="#"> Explore the inventory </a>{" "}
+             
+                <a href="#" className="text-blue-900"> Explore the inventory </a>
               </span>
-              <span className="text-xs ml-1">&#x279c;</span>
-            </a>
+              <span className="text-xs text-blue-900 ml-1">&#x279c;</span>
+           
           </div>
           <svg
             className="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
