@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from '../../../../firebase.init';
 import img from '../../../../img/inventory1.jpg';
+import Loading from '../../../Shared/Loading/Loading'
 const Login = () => {
   const navigate = useNavigate();
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -15,7 +16,7 @@ const Login = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>
   }
   if (user) {
       navigate('/')  

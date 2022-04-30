@@ -3,7 +3,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from '../../../../firebase.init';
 import img from '../../../../img/inventory2.jpg'
-
+import Loading from '../../../Shared/Loading/Loading'
 
 const Registration = () => {
 
@@ -19,7 +19,7 @@ const Registration = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>
   }
   if (user) {
     navigate("/");

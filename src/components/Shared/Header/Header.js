@@ -1,16 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-
+import { PencilAltIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import './header.css'; 
 import { NavLink } from 'react-router-dom';
-const navigation = [
-  { name: 'Add', href: '/', current: true },
-
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
+import Loading from '../Loading/Loading';
+import { signOut } from 'firebase/auth';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -19,6 +16,18 @@ function classNames(...classes) {
 
 
 export default function Header() {
+  const [user, loading, error] = useAuthState(auth);
+  
+  if (error) {
+    return (
+      <div>
+        <p>Error: {error.message}</p>
+      </div>
+    );
+  }
+  if (loading) {
+    return <Loading></Loading>
+  }
 
     const navLinkStyles = ({isActive})=>{
         return{
@@ -74,7 +83,7 @@ export default function Header() {
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <PencilAltIcon className="h-6 w-6 mx-2" aria-hidden="true" />
                 </button>
 
                 {/* Profile dropdown */}
@@ -101,32 +110,35 @@ export default function Header() {
                     <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <NavLink
+                            to='/profile'
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
-                          </a>
+                            {user?.email} Profile
+                          </NavLink>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="/"
+                          <NavLink
+                            to="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Settings
-                          </a>
+                          </NavLink>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
+                          onClick={()=>signOut(auth)}
+                           className={classNames(
+                             active ? "bg-gray-100" : "",
+                             "block px-4 py-2 text-sm text-gray-700"
+                           )}
+                         >
+                           Sign out
+                         </a>
                         )}
                       </Menu.Item>
                     </Menu.Items>

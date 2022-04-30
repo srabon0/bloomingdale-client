@@ -87,7 +87,7 @@ const Banner = () => {
         </div>
         <button
           onClick={() => prevSlide()}
-          className="ml-4 absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline"
+          className="ml-6 absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400  focus:outline-none focus:shadow-outline"
         >
           <span className="block" style={{ transform: "scale(-1)" }}>
             &#x279c;
@@ -95,7 +95,7 @@ const Banner = () => {
         </button>
         <button
           onClick={() => nextSlide()}
-          className="mr-4 absolute top-0 mt-32 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline"
+          className="mr-6 absolute top-0 mt-32 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 focus:outline-none focus:shadow-outline"
         >
           <span className="block" style={{ transform: "scale(1)" }}>
             &#x279c;
