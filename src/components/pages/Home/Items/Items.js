@@ -10,7 +10,7 @@ const Items = ({product}) => {
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                   />
                 </div>
-                <div className="mt-4 flex justify-between">
+                <div className="my-4 flex justify-between">
                   <div>
                     <h3 className="text-sm text-gray-700">
                      
@@ -22,7 +22,9 @@ const Items = ({product}) => {
                   </div>
                   <p className="text-sm font-medium text-gray-900">{product.price}</p>
                 </div>
-                <button onClick={()=>console.log('imclick')} className="hover:blockbg-black" >hello</button>
+                <button onClick={()=>console.log('im clicked')} className=" bg-gray-700 hover:bg-transparent text-white font-semibold hover:text-gray-700 py-2 px-4 border border-transparent transition hover:border-gray-700 rounded">
+  Manage
+</button>
               </div>
     );
 };

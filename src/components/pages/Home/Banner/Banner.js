@@ -72,7 +72,7 @@ const Banner = () => {
             
               <span>
              
-                <a href="#" className="text-blue-900"> Explore the inventory </a>
+                <a href="#inventory" className="text-blue-900"> Explore the inventory </a>
               </span>
               <span className="text-xs text-blue-900 ml-1">&#x279c;</span>
            

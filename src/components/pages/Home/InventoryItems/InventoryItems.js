@@ -30,7 +30,7 @@ const products = [
   
   export default function InventoryItems() {
     return (
-      <div className="bg-white">
+      <div className="bg-white" id="inventory">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-4xl text-center font-extrabold tracking-tight text-blue-900">Our Inventory</h2>
   
