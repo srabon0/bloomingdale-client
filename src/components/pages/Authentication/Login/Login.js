@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from '../../../../firebase.init';
 import img from '../../../../img/inventory1.jpg';
 import Loading from '../../../Shared/Loading/Loading'
+import Social from "../Social/Social";
 const Login = () => {
   const navigate = useNavigate();
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -50,8 +51,9 @@ const Login = () => {
           <p className="text-xl text-center text-gray-600 dark:text-gray-200">
             Welcome back!
           </p>
+          <Social></Social>
 
-          <a
+          {/* <a
             href="#"
             className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-200 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
           >
@@ -92,7 +94,7 @@ const Login = () => {
             </a>
 
             <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
-          </div>
+          </div> */}
 
           <div className="mt-4">
             <label
