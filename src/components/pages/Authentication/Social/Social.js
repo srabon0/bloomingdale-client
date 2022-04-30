@@ -1,26 +1,23 @@
 import React from "react";
-import fbicon from '../../../../img/fb.png';
-import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import githubicon from '../../../../img/github.png';
+import {useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from "../../../../firebase.init";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../Shared/Loading/Loading";
 const Social = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, user1, loading1, error1] = useSignInWithFacebook(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     const navigate = useNavigate();
-    if (error || error1 ) {
-        return (
-          <div>
-            <p>Error: {error.message}</p>
-          </div>
-        );
+    let errormessage;
+    if (googleError || githubError ) {
+       errormessage = <p className="text-red-400 mt-2" >{googleError?.message || githubError?.message}</p>
       }
-      if (loading || loading1) {
+      if (googleLoading || githubLoading) {
         return <Loading></Loading>
       }
-      if (user || user1) {
+      if (googleUser || githubUser) {
         navigate('/')
-        console.log(user?.email)
+        
       }
 
   return (
@@ -61,14 +58,15 @@ const Social = () => {
       >
         <div className="px-4 py-2">
         
-            <img className="w-6 h-6" src={fbicon} alt="" />
+            <img className="w-8 h-8" src={githubicon} alt="" />
         
         </div>
 
-        <button onClick={() => signInWithFacebook()} className="w-5/6 px-4 py-3 font-bold text-center">
-          Sign in Facebook
+        <button onClick={() => signInWithGithub()} className="w-5/6 px-4 py-3 font-bold text-center">
+          Sign in Github
         </button>
       </a>
+      {errormessage}
 
       <div className="flex items-center justify-between mt-4">
         <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
@@ -82,6 +80,7 @@ const Social = () => {
 
         <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
       </div>
+     
     </div>
   );
 };
