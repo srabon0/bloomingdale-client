@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Items = ({item}) => {
+  const navigate = useNavigate()
+  const handleNavigate = (id)=>{
+    navigate(`/inventory/${id}`)
+
+  }
     return (
         <div className="group relative">
                 <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -24,7 +30,7 @@ const Items = ({item}) => {
                   <p className="text-sm font-medium text-gray-900">{item.supplier}</p>
                   <p className="text-sm font-medium text-gray-900">{item.description}</p>
                 </div>
-                <button onClick={()=>console.log('im clicked')} className=" bg-gray-700 hover:bg-transparent text-white font-semibold hover:text-gray-700 py-2 px-4 border border-transparent transition hover:border-gray-700 rounded">
+                <button onClick={()=>handleNavigate(item._id)} className=" bg-gray-700 hover:bg-transparent text-white font-semibold hover:text-gray-700 py-2 px-4 border border-transparent transition hover:border-gray-700 rounded">
   Manage
 </button>
               </div>

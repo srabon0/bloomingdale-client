@@ -26,7 +26,7 @@ import Items from '../Items/Items'
           <h2 className="text-4xl text-center font-extrabold tracking-tight text-blue-900">Our Inventory</h2>
   
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {items.map((item) => <Items key={item._id} item={item} ></Items> )}
+            {items.slice(0,6).map((item) => <Items key={item._id} item={item} ></Items> )}
           </div>
         </div>
       </div>
