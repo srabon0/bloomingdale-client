@@ -7,7 +7,6 @@ const useItem = (id)=>{
         const url = `http://localhost:5000/inventory/${id}`;
         axios.get(url)
         .then(res=>{
-            console.log(res.data)
             setItem(res.data);
         })
         
