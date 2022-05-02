@@ -5,6 +5,8 @@ const AddProduct = () => {
         console.log("shingping");
     }
     return (
+        
+      
         <section class="p-6 dark:bg-coolGray-800 dark:text-coolGray-50">
         <form onSubmit={handleAddProduct} class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
             <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-coolGray-900">
@@ -47,6 +49,7 @@ const AddProduct = () => {
             
         </form>
     </section>
+
     );
 };
 
