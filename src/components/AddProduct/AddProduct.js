@@ -1,7 +1,14 @@
 import axios from "axios";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 
 const AddProduct = () => {
+  const [user,loading,error] = useAuthState(auth);
+  if (loading){
+    return <Loading></Loading>
+  }
   const handleAddProduct = async(event) => {
     event.preventDefault();
     const productName = event.target.productName.value;
@@ -16,7 +23,8 @@ const AddProduct = () => {
       quantity:quantity,
       supplier:supplier,
       imgurl:imgurl,
-      desc:desc
+      desc:desc,
+      mail:user?.email
 
     }
     const url = "http://localhost:5000/addproduct"

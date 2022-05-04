@@ -13,6 +13,7 @@ import Notfound from "./components/Shared/Notfound/Notfound";
 import Manage from "./components/Manage/Manage";
 import { createContext, useState } from "react";
 import RequireAuth from "./components/pages/Authentication/RequreAuth/RequireAuth";
+import MyItems from "./components/MyItems/MyItems";
 export const ItemContext = createContext();
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
             <AddProduct></AddProduct>
           </RequireAuth>
         }></Route>
-      <Route path='/delete' element={<AddProduct></AddProduct>}></Route>
+      <Route path='/myitems' element={<RequireAuth>
+        <MyItems></MyItems>
+      </RequireAuth>}></Route>
         <Route path="*" element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>

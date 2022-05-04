@@ -31,7 +31,7 @@ import Items from '../Items/Items'
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {items.slice(0,6).map((item) => <Items key={item._id} item={item} ></Items> )}
           </div>
-          <button onClick={()=>navigate('/manage')} type="button" class="px-8 py-3 font-semibold border rounded dark:border-coolGray-100 dark:text-coolGray-100">Managae Inventories</button>
+          <button onClick={()=>navigate('/manage')} type="button" className="px-8 py-3 font-semibold border rounded dark:border-coolGray-100 dark:text-coolGray-100">Managae Inventories</button>
 
         </div>
       </div>

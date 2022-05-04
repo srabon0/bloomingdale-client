@@ -100,7 +100,7 @@ export default function Header() {
                 </NavLink>
                 <NavLink
                   as={Link}
-                  to='/shingpiun'
+                  to='/myitems'
                  
                   style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
                 >My items
