@@ -1,9 +1,11 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useItems from "../../hooks/useItems";
 
 const ItemUpDel = ({ item }) => {
   const [items, setItems] = useItems();
+  const navigate = useNavigate();
   const handleItemDelete = async (id) => {
     const url = "http://localhost:5000/delete";
     const proceed = window.confirm(
@@ -59,17 +61,19 @@ const ItemUpDel = ({ item }) => {
               <span>Remove</span>
             </button>
             <button
+            onClick={()=>navigate(`/inventory/${_id}`)}
               type="button"
               className="flex items-center px-2 py-1 space-x-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
                 className="w-4 h-4 fill-current"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-                <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
+                <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
               </svg>
-              <span>Add to favorites</span>
+              <span>Manage Item</span>
             </button>
           </div>
         </div>
