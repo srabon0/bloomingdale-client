@@ -70,7 +70,7 @@ export default function Header() {
                   </><span className='text-white font-bold text-xl'>BroomingDale</span>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="flex md:mt-1 space-x-4">
                       <NavLink style={navLinkStyles} className="text-gray-300 hover:bg-gray-700  hover:text-white" to='/' > Home </NavLink>
                       <NavLink style={navLinkStyles} to='/blog' > Blog </NavLink>
                 
@@ -78,13 +78,39 @@ export default function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <PencilAltIcon className="h-6 w-6 mx-2" aria-hidden="true" />
-                </button>
+                { user && <>
+                
+                  <NavLink
+                  as={Link}
+                  to='/manage'
+                 
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Manage Items
+                  
+                 
+                </NavLink>
+                <NavLink
+                  as={Link}
+                  to='/addproduct'
+                 
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Add Items
+                  
+                 
+                </NavLink>
+                <NavLink
+                  as={Link}
+                  to='/shingpiun'
+                 
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                >My items
+                  
+                 
+                </NavLink>
+
+
+                </>
+                }
 
                 {/* Profile dropdown */}
                 
@@ -146,8 +172,11 @@ export default function Header() {
                    </Menu.Items>
                  </Transition>
                </Menu>:
-               <Link  to='/login' >Login</Link>
-               }
+               <>
+               <NavLink   to='/login'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300 hover:bg-gray-700 hover:text-white" >Login</NavLink>
+               <NavLink   to='/signup'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300 hover:bg-gray-700 hover:text-white" >SignUp</NavLink>
+               
+               </>}
               </div>
             </div>
         
@@ -156,11 +185,33 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <ul>
-                  <li><NavLink style={navLinkStyles} className="text-gray-300 hover:bg-gray-700 hover:text-white" to='/' > Home </NavLink>
+                  <li className='border-2 hover:border-l-green-300 border-transparent  p-1 rounded-md transition duration-300 ' ><NavLink style={navLinkStyles} className="text-gray-300 hover:bg-gray-700 hover:text-white" to='/' > Home </NavLink>
                       </li>
-                      <li>
+                      <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md   transition duration-300'>
                       <NavLink style={navLinkStyles} to='/blog' > Blog </NavLink>
                       </li>
+                      { 
+                       user? <>
+                       <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md  transition duration-300 ' >
+                      <NavLink style={navLinkStyles} to='/manage' > Manage Items </NavLink>
+                      </li>
+                      <li  className='border-2 hover:border-l-green-300 border-transparent  p-1 rounded-md  transition duration-300' >
+                      <NavLink style={navLinkStyles} to='/addproduct' > Add items </NavLink>
+                      </li>
+                      <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md  transition duration-300 ' >
+                      <NavLink style={navLinkStyles} to='/myitems' > My items </NavLink>
+                      </li>
+                      
+                       
+                       </>:<>
+                       <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md  transition duration-300 ' >
+                      <NavLink style={navLinkStyles} to='/login' > Login </NavLink>
+                      </li>
+                      <li  className='border-2 hover:border-l-green-300 border-transparent  p-1 rounded-md  transition duration-300' >
+                      <NavLink style={navLinkStyles} to='/signup' > SignUp </NavLink>
+                      </li>
+                       </>
+                      }
               </ul>
             </div>
           </Disclosure.Panel>

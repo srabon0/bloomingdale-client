@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useItems from "../hooks/useItems";
 import ItemUpDel from "../pages/ItemUpDel/ItemUpDel";
 
 const Manage = () => {
+  const navigate = useNavigate('')
   const [items, setItems] = useItems();
   return (
     <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100 mx-auto">
@@ -15,18 +17,14 @@ const Manage = () => {
 
       <div className="flex justify-end space-x-4">
         <button
+        onClick={()=>navigate("/addproduct")}
           type="button"
           className="px-6 py-2 border rounded-md dark:border-violet-400"
         >
-          Back
-          <span className="sr-only sm:not-sr-only">to shop</span>
+          Add
+          <span className="sr-only sm:not-sr-only">New Item</span>
         </button>
-        <button
-          type="button"
-          className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-coolGray-900 dark:border-violet-400"
-        >
-          <span className="sr-only sm:not-sr-only">Continue to</span>Checkout
-        </button>
+        
       </div>
     </div>
   );
