@@ -10,11 +10,14 @@ import Profile from "./components/Profile/Profile";
 import AddProduct from "./components/AddProduct/AddProduct";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
 import Notfound from "./components/Shared/Notfound/Notfound";
-
+import Manage from "./components/Manage/Manage";
+import { createContext, useState } from "react";
+export const ItemContext = createContext();
 
 function App() {
+  const [items,setItems] = useState([]);
   return (
-    <>
+    <ItemContext.Provider value={[items,setItems]}>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -22,6 +25,7 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/manage" element={<Manage></Manage>}></Route>
         
 
         <Route
@@ -34,7 +38,7 @@ function App() {
         <Route path="*" element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>
-    </>
+    </ItemContext.Provider>
   );
 }
 

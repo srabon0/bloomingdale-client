@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
+import { ItemContext } from "../../App";
 
 const useItems = ()=>{
-    const [items,setItems] = useState([]);
+    const [items,setItems] = useContext(ItemContext)
     useEffect(()=>{
         const url = "http://localhost:5000/items";
         axios.get(url)
