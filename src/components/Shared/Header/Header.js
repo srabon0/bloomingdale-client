@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { PencilAltIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './header.css'; 
@@ -18,6 +18,7 @@ function classNames(...classes) {
 export default function Header() {
   const [user, loading, error] = useAuthState(auth);
   
+  
   if (error) {
     return (
       <div>
@@ -25,8 +26,9 @@ export default function Header() {
       </div>
     );
   }
-  if (loading) {
-    return <Loading></Loading>
+  
+  if (user){
+    console.log(user);
   }
 
     const navLinkStyles = ({isActive})=>{
@@ -121,7 +123,7 @@ export default function Header() {
                      <span className="sr-only">Open user menu</span>
                      <img
                        className="h-8 w-8 rounded-full"
-                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                       src={user?.photoURL || "https://img.icons8.com/plasticine/344/user.png"}
                        alt=""
                      />
                    </Menu.Button>
@@ -142,7 +144,7 @@ export default function Header() {
                            to='/profile'
                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                          >
-                           {user?.email} Profile
+                           {user?.displayName || user.email.split("@")[0]} - Profile
                          </NavLink>
                        )}
                      </Menu.Item>

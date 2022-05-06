@@ -14,6 +14,7 @@ import Manage from "./components/Manage/Manage";
 import { createContext, useState } from "react";
 import RequireAuth from "./components/pages/Authentication/RequreAuth/RequireAuth";
 import MyItems from "./components/MyItems/MyItems";
+import { ToastContainer } from "react-toastify";
 export const ItemContext = createContext();
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="*" element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </ItemContext.Provider>
   );
 }
