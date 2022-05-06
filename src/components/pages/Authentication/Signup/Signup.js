@@ -1,6 +1,7 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from '../../../../firebase.init';
 import img from '../../../../img/inventory2.jpg';
 import Loading from '../../../Shared/Loading/Loading';
@@ -8,15 +9,14 @@ import Social from '../../Authentication/Social/Social';
 const Registration = () => {
 
   const navigate = useNavigate();
+  var errormsg;
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+ 
   if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
+    errormsg = <p className="text-red-500">Error: {error.message}</p> 
+    
   }
   if (loading) {
     return <Loading></Loading>
@@ -30,7 +30,15 @@ const Registration = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const confirmPassword = e.target.confirmpassword.value;
     console.log(email, password);
+    if(password!==confirmPassword){
+     toast("password not matched")
+     e.target.reset()
+      return
+
+
+    }
     if (email && password) {
       createUserWithEmailAndPassword(email, password);
       console.log("User created", name);
@@ -42,7 +50,7 @@ const Registration = () => {
         <div className="flex max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
           <div
             className="hidden bg-cover lg:block lg:w-1/2"
-            style={{ "background-image": `url(${img})` }}
+            style={{ "backgroundImage": `url(${img})` }}
           ></div>
 
           <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
@@ -65,6 +73,7 @@ const Registration = () => {
                 Name
               </label>
               <input
+              required
                 name="name"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                 type="text"
@@ -79,6 +88,7 @@ const Registration = () => {
                 Email Address
               </label>
               <input
+              required
                 name="email"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                 type="email"
@@ -93,20 +103,36 @@ const Registration = () => {
                 >
                   Password
                 </label>
-                <a
-                  href="#"
-                  className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-                >
-                  Forget Password?
-                </a>
+                
               </div>
 
               <input
+              required
                 name="password"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                 type="password"
               />
             </div>
+            <div className="mt-4">
+              <div className="flex justify-between">
+                <label
+                  className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                  htmlFor="loggingPassword"
+                >
+                  Confirm Password
+                </label>
+                
+              </div>
+
+              <input
+              required
+                name="confirmpassword"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                type="password"
+              />
+            </div>
+
+            
 
             <div className="mt-8">
               <input
@@ -115,6 +141,7 @@ const Registration = () => {
                 className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
               />
             </div>
+         
 
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
