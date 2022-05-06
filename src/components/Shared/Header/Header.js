@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './header.css'; 
 import { Link, NavLink } from 'react-router-dom';
-import Loading from '../Loading/Loading';
+import Loading from '../../Shared/Loading/Loading';
 import { signOut } from 'firebase/auth';
 
 function classNames(...classes) {
@@ -27,8 +27,9 @@ export default function Header() {
     );
   }
   
-  if (user){
-    console.log(user);
+  if (!user){
+    <Loading></Loading>
+    
   }
 
     const navLinkStyles = ({isActive})=>{

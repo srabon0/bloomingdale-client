@@ -33,7 +33,7 @@ const Registration = () => {
     const confirmPassword = e.target.confirmpassword.value;
     console.log(email, password);
     if(password!==confirmPassword){
-     toast("password not matched")
+     toast("Password not matched")
      e.target.reset()
       return
 
