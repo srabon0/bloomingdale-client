@@ -47,62 +47,62 @@ const AddProduct = () => {
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
             <div className="col-span-full sm:col-span-3">
-              <label htmlFor="productName" className="text-sm">
+              <label htmlFor="productName" className="text-lg">
                 Product Name
               </label>
               <input
                 name="productName"
                 type="text"
                 placeholder="Product Name"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
             <div className="col-span-full sm:col-span-3 ">
-              <label htmlFor="price" className="text-sm">
+              <label htmlFor="price" className="text-lg">
                 Price
               </label>
               <input
                 name="price"
                 type="number"
                 placeholder="Product Price"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
             <div className="col-span-full sm:col-span-3">
-              <label htmlFor="quantity" className="text-sm">
+              <label htmlFor="quantity" className="text-lg">
                 Quantity
               </label>
               <input
                 name="quantity"
                 type="number"
                 placeholder="Initial Quantity"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
             <div className="col-span-full">
-              <label htmlFor="supplier" className="text-sm">
+              <label htmlFor="supplier" className="text-lg">
                 Supplier Name
               </label>
               <input
                 name="supplier"
                 type="text"
                 placeholder="Supplier Name"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-2/4 block p-3 rounded dark:bg-coolGray-800"
               />
             </div>
             <div className="col-span-full sm:col-span-2">
-              <label htmlFor="imgurl" className="text-sm">
+              <label htmlFor="imgurl" className="text-lg">
                 Image Url
               </label>
               <input
                 name="imgurl"
                 type="text"
                 placeholder="Product Image Url"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
             <div className="col-span-full sm:col-span-2">
-              <label htmlFor="desc" className="text-sm">
+              <label htmlFor="desc" className="text-lg">
                 Description
               </label>
               <textarea
@@ -110,13 +110,13 @@ const AddProduct = () => {
                 name="desc"
                 type="text"
                 placeholder="Short Description"
-                className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-coolGray-700 dark:text-coolGray-900"
+              className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
 
             
           </div>
-          <div className="flex justify-end space-x-4">
+          <div className=" col-span-full sm:col-span-2 flex justify-end space-x-4">
               <input
                 value="Add product"
                 type="submit"
@@ -130,3 +130,5 @@ const AddProduct = () => {
 };
 
 export default AddProduct;
+
+
