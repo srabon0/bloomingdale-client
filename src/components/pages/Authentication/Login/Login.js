@@ -1,6 +1,7 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from '../../../../firebase.init';
@@ -11,9 +12,12 @@ const Login = () => {
   const emailRef = useRef("");
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   let errormessage;
+
   if (error) {
    errormessage = <p className="text-red-400 mt-2" >{error.message} </p>
   }
@@ -21,7 +25,19 @@ const Login = () => {
     return <Loading></Loading>
   }
   if (user) {
-      navigate('/')  
+    const url = "http://localhost:5000/login";
+    const genToken = async()=>{
+      const data = {email:user.user.email}
+      const result =await axios.post(url,data);
+      if (result.data.token){
+        localStorage.setItem('accessToken', result.data.token)
+        navigate(from, { replace: true });
+
+      }
+
+
+    }
+    genToken();
     }
    
   

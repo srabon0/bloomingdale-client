@@ -1,19 +1,3 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -28,16 +12,16 @@ import LoadOrItem from '../../../LoadOrItem/LoadOrItem'
     useEffect (() => {
       const getItems =  async () =>{
         const result = await axios.get (
-          `http://localhost:5000/items` //Endpoint and parameter or base Url
+          `http://localhost:5000/items` 
           )
         console.log(result.data)
   
-        setItems(result.data)//sets the data to appear 
-        setLoading(false) //stop loading when data is fetched
+        setItems(result.data)
+        setLoading(false) 
       }
       getItems()
   
-    }, [])//when we use useEffect we put dependency as a second paramers
+    }, [])
 
     
     return (

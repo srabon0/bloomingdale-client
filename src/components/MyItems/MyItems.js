@@ -20,10 +20,21 @@ const MyItems = () => {
         console.log(email);
         const url = `http://localhost:5000/myitems?email=${email}`;
         (async()=>{
-            const result = await axios.get(url);
-            setItems(result.data);
-            console.log(result.data);
+          axios.get(url, {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+          })
+          .then((res) => {
+            console.log(res.data)
+            setItems(res.data)
+          })
+          .catch((error) => {
+            console.error(error)
+            navigate('/login')
+          })
     
+            
         })();
   }}, [user]);
     

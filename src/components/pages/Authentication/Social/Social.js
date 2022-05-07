@@ -2,9 +2,12 @@ import React from "react";
 import githubicon from '../../../../img/github.png';
 import {useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from "../../../../firebase.init";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../../Shared/Loading/Loading";
+import axios from "axios";
 const Social = () => {
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     const navigate = useNavigate();
@@ -16,7 +19,20 @@ const Social = () => {
         return <Loading></Loading>
       }
       if (googleUser || githubUser) {
-        navigate('/')
+        const url = "http://localhost:5000/login";
+        const genToken = async()=>{
+          console.log(githubUser);
+          const data = {email:  googleUser? googleUser?.user.email : githubUser?._tokenResponse.email }
+          const result =await axios.post(url,data);
+          if (result.data.token){
+            localStorage.setItem('accessToken', result.data.token)
+            navigate(from, { replace: true });
+
+          }
+    
+    
+        }
+        genToken();
         
       }
 
