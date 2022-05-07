@@ -27,13 +27,19 @@ import LoadOrItem from '../../../LoadOrItem/LoadOrItem'
     return (
       <div className="bg-white" id="inventory">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-4xl text-center font-extrabold tracking-tight text-blue-900">Our Inventory</h2>
+          <h2 className="text-4xl text-center font-extrabold tracking-tight text-blue-900">Items in Inventory</h2>
   
           <div className="">
         
            <LoadOrItem isLoading ={isLoading} items = {items} ></LoadOrItem>
           </div>
-          <button onClick={()=>navigate('/manage')} type="button" className="px-8 py-3 font-semibold border rounded dark:border-coolGray-100 dark:text-coolGray-100">Managae Inventories</button>
+          <br />
+          <button onClick={()=>navigate('/manage')} type="button"  className="min-w-auto flex h-10 bg-blue-300 p-2 rounded hover:bg-blue-500 text-white font-semibold transition-transform hover:translate-y-2 ease-in-out">Managae Inventories
+          
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+          </button>
 
         </div>
       </div>

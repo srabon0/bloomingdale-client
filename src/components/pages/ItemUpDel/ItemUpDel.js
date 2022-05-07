@@ -1,10 +1,10 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useItems from "../../hooks/useItems";
 
 const ItemUpDel = ({ item }) => {
-  const [items, setItems] = useItems();
+  const [items, setItems] = useItems()
   const navigate = useNavigate();
   const handleItemDelete = async (id) => {
     const url = "http://localhost:5000/delete";
