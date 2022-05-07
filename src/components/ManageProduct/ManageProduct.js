@@ -9,6 +9,7 @@ function isInt(value) {
 }
 
 const ManageProduct = () => {
+  const img = 'https://images.pexels.com/photos/6033985/pexels-photo-6033985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
   const { id } = useParams();
   const [item, setItem] = useItem(id);
 
@@ -19,13 +20,12 @@ const ManageProduct = () => {
     if (isInt(increasingStock)) {
       var { quantity, ...rest } = item;
       var quantity = quantity + parseInt(increasingStock);
-     
 
-      let updatedItemINC = { quantity, ...rest }
+      let updatedItemINC = { quantity, ...rest };
       var newQuantity = { upQty: quantity };
       updateInDb(id, newQuantity);
       setItem(updatedItemINC);
-      
+      event.target.reset();
     }
   };
 
@@ -49,10 +49,38 @@ const ManageProduct = () => {
   };
   return (
     <section className="text-gray-600 body-font overflow-hidden">
-      <form onSubmit={handleRestock}>
+      {/* >
         <input type="number" name="quantity" />
         <button type="submit"> Restock the item </button>
-      </form>
+      </form> */}
+      <div
+        className="w-full dark:bg-coolGray-500"
+        style={{"backgroundImage": `url(${img})` ,"backgroundPosition": "center center","backgroundBlendMode": "multiply","background-size": "cover"}}
+      >
+        <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
+          <h1 className="text-5xl antialiased font-semibold leading-none text-center dark:text-coolGray-100">
+            Restock Item
+          </h1>
+          <p className="pt-2 pb-8 text-xl antialiased text-center dark:text-coolGray-100">
+            Find out about events and other news
+          </p>
+          <div className="flex flex-row">
+          <form onSubmit={handleRestock}>
+            <input
+             type="number" name="quantity" min={1}
+              className="w-3/5 p-3 rounded-l-lg sm:w-2/3"
+            />
+            <input
+            value="Restock"
+              type="submit"
+              className="p-3 font-semibold rounded-r-lg sm:w-1/3 dark:bg-violet-400 dark:text-coolGray-900"
+            />
+              
+          
+            </form>
+          </div>
+        </div>
+      </div>
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
@@ -186,7 +214,6 @@ const ManageProduct = () => {
             </div>
             <div className="flex">
               <form onSubmit={handleDeliver}>
-                
                 <button
                   type="submit"
                   className="flex mx-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"

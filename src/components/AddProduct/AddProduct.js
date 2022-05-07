@@ -28,13 +28,12 @@ const AddProduct = () => {
 
     }
     const url = "http://localhost:5000/addproduct"
-    const result = await axios.post(url,{data:data})
-    console.log(result.data);
-
-
-    
-
-    console.log("shingping" , productName,price,quantity,supplier,imgurl,desc);
+    if(price && quantity && productName){
+      const result = await axios.post(url,{data:data})
+      alert('Product added Successfully')
+      console.log(result);
+      event.target.reset()
+    }
   };
   return (
     <section className="p-6 dark:bg-coolGray-800 dark:text-coolGray-50">
@@ -46,7 +45,7 @@ const AddProduct = () => {
           <div className="space-y-2 col-span-full lg:col-span-1">
             <p className="font-medium">Product Information</p>
           </div>
-          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 gap-3">
+          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="productName" className="text-sm">
                 Product Name
@@ -121,7 +120,7 @@ const AddProduct = () => {
               <input
                 value="Add product"
                 type="submit"
-                className="w-40 px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-coolGray-900 dark:border-violet-400"
+                className="focus:outline-none text-white text-sm py-2.5 px-5 border-b-4 border-gray-600 rounded-md bg-gray-500 hover:bg-gray-400"
               />
             </div>
         </fieldset>
