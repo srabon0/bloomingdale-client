@@ -15,6 +15,7 @@ import { createContext, useState } from "react";
 import RequireAuth from "./components/pages/Authentication/RequreAuth/RequireAuth";
 import MyItems from "./components/MyItems/MyItems";
 import { ToastContainer } from "react-toastify";
+import Feedback from "./components/Feedback/Feedback";
 export const ItemContext = createContext();
 
 function App() {
@@ -35,6 +36,11 @@ function App() {
         <Route path="/manage" element={
           <RequireAuth>
             <Manage></Manage>
+          </RequireAuth>
+        }></Route>
+        <Route path="/feedback" element={
+          <RequireAuth>
+            <Feedback></Feedback>
           </RequireAuth>
         }></Route>
         

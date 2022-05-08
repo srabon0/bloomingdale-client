@@ -111,6 +111,16 @@ export default function Header() {
                  
                 </NavLink>
 
+                <NavLink
+                  as={Link}
+                  to='/feedback'
+                 
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Feedback
+                  
+                 
+                </NavLink>
+
 
                 </>
                 }
@@ -203,6 +213,9 @@ export default function Header() {
                       </li>
                       <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md  transition duration-300 ' >
                       <NavLink style={navLinkStyles} to='/myitems' > My items </NavLink>
+                      </li>
+                      <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md  transition duration-300 ' >
+                      <NavLink style={navLinkStyles} to='/feedback' > Feedback </NavLink>
                       </li>
                       
                        
