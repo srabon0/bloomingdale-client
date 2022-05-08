@@ -70,7 +70,7 @@ export default function Header() {
                     src="https://www.svgrepo.com/show/296621/t-shirt-shirt.svg"
                     alt="thsirt"
                   />
-                  </><Link to="/" className='text-white font-bold text-xl'>BroomingDale</Link>
+                  </><Link to="/" className='text-white font-bold text-xl'>bloomingDale</Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex md:mt-1 space-x-4">

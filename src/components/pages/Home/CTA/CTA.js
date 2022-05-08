@@ -6,7 +6,7 @@ const CTA = () => {
 	<div className="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
 		<div className="flex flex-col justify-center lg:text-left">
 			<p className="mb-1 text-sm font-medium tracking-widest uppercase bg-blue-900 text-white">Stocking Became more easy</p>
-			<h1 className="py-2 text-3xl font-medium leading-tight title-font text-blue-900">Try our Broomingdale App.</h1>
+			<h1 className="py-2 text-3xl font-medium leading-tight title-font text-blue-900">Try our bloomingDale App.</h1>
 		</div>
 		<div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
 			<button className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-900 text-white">

@@ -1,4 +1,4 @@
-# Getting Started with BroomingDale Inventory
+# Getting Started with bloomingDale Inventory
 
 This project was Tailwinded with [React App](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-srabon0).
 
