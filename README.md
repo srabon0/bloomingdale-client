@@ -1,6 +1,6 @@
 # Getting Started with BroomingDale Inventory
 
-This project was bootstrapped with [Create React App](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-srabon0).
+This project was Tailwinded with [React App](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-srabon0).
 
 ## Short Intro
 
@@ -9,61 +9,60 @@ In the project , you can have the basic functionality of an Inventory management
 ### `Live site`
 
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [https://bloomingdale-inventory.web.app/](https://bloomingdale-inventory.web.app/) to view it in your browser.
 
 See the demo in the link.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Sign In & Signup`
 
-### `npm run build`
+The app has the functionality to sign in and sign up . This app uses authentication firebase authentication for register a user.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Add Item`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In this app you can add a product in inventory and the informations are saved in the mongodb database.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `Delete Item`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can Delete items from the inventory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note: this is a one-way operation. Once you `Delete`, you can't find the product back!, you need to add product again**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Filter item of an specific user
 
-## Learn More
+You will see your specific product which is added by you in the `My Items` page .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### You can reset your password
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can reset your password if you forget about it. Just go to login and enter you email and click forgot password link. 
 
-### Code Splitting
+## The Tool and Tech used in the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### REACT
 
-### Analyzing the Bundle Size
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### MONGODB ATLAS
 
-### Making a Progressive Web App
+MongoDB Atlas is a fully-managed cloud database that handles all the complexity of deploying, managing, and healing your deployments on the cloud service provider of your choice (AWS , Azure, and GCP). MongoDB Atlas is the best way to deploy, run, and scale MongoDB in the cloud.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### EXPRESS
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Express.js, or simply Express, is a back end web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js
 
-### Deployment
+### NODE.JS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browse.
 
-### `npm run build` fails to minify
+# REACT ROUTER
+React Router is a lightweight, fully-featured routing library for the React JavaScript library. React Router runs everywhere that React runs; on the web, on the server (using node.js), and on React Native.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# REACT FIREBASE HOOK
+
+This library explores how React Hooks can work to make integration with Firebase even more straightforward than it already is. It takes inspiration for naming from RxFire and is based on an internal library that we had been using in a number of apps prior to the release of React Hooks. The implementation with hooks is 10x simpler than our previous implementation.
+
+
+

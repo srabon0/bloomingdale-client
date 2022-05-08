@@ -1,6 +1,6 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from '../../../../firebase.init';
 import img from '../../../../img/inventory2.jpg';
@@ -9,6 +9,8 @@ import Social from '../../Authentication/Social/Social';
 const Registration = () => {
 
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   var errormsg;
 
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -22,7 +24,7 @@ const Registration = () => {
     return <Loading></Loading>
   }
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
 
   const handleRegistration = (e) => {
@@ -41,7 +43,7 @@ const Registration = () => {
     }
     if (email && password) {
       createUserWithEmailAndPassword(email, password);
-      console.log("User created", name);
+      
     }
   };
   return (
