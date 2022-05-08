@@ -81,7 +81,7 @@ const AddProduct = () => {
               className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
-            <div className="col-span-full">
+            <div className="col-span-full sm:col-span-3">
               <label htmlFor="supplier" className="text-lg">
                 Supplier Name
               </label>
@@ -89,10 +89,10 @@ const AddProduct = () => {
                 name="supplier"
                 type="text"
                 placeholder="Supplier Name"
-              className="w-2/4 block p-3 rounded dark:bg-coolGray-800"
+              className="w-full block p-3 rounded dark:bg-coolGray-800"
               />
             </div>
-            <div className="col-span-full sm:col-span-2">
+            <div className="col-span-full">
               <label htmlFor="imgurl" className="text-lg">
                 Image Url
               </label>
@@ -103,7 +103,7 @@ const AddProduct = () => {
               className="w-full p-3 rounded dark:bg-coolGray-800"
               />
             </div>
-            <div className="col-span-full sm:col-span-2">
+            <div className="col-span-full">
               <label htmlFor="desc" className="text-lg">
                 Description
               </label>
@@ -116,15 +116,15 @@ const AddProduct = () => {
               />
             </div>
 
-            
-          </div>
-          <div className=" col-span-full sm:col-span-2 flex justify-end space-x-4">
+            <div className="col-span-full">
               <input
                 value="Add product"
                 type="submit"
-                className="focus:outline-none text-white text-sm py-2.5 px-5 border-b-4 border-gray-600 rounded-md bg-gray-500 hover:bg-gray-400"
+                className="w-3/5 focus:outline-none text-white text-sm py-2.5 px-5 border-b-4 border-gray-600 rounded-md bg-gray-500 hover:bg-gray-400"
               />
             </div>
+          </div>
+          
         </fieldset>
       </form>
     </section>

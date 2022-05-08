@@ -22,30 +22,30 @@ const SingleItem = ({ item }) => {
 
   return (
     <tr>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <div class="flex items-center">
-          <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full rounded-full" src={img} alt={_id} />
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <div className="flex items-center">
+          <div className="flex-shrink-0 w-10 h-10">
+            <img className="w-full h-full rounded-full" src={img} alt={_id} />
           </div>
-          <div class="ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">{productName}</p>
+          <div className="ml-3">
+            <p className="text-gray-900 whitespace-no-wrap">{productName}</p>
           </div>
         </div>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap">{price}</p>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">{price}</p>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap">{quantity}</p>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">{quantity}</p>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <span
           onClick={() => handleItemDelete(_id)}
-          class="cursor-pointer relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight"
+          className="cursor-pointer relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight"
         >
           <span
             aria-hidden
-            class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"
+            className="absolute inset-0 bg-orange-200 opacity-50 rounded-full"
           ></span>
           <button
            
@@ -66,14 +66,14 @@ const SingleItem = ({ item }) => {
           </button>
         </span>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <span
           onClick={() => navigate(`/inventory/${_id}`)}
-          class="cursor-pointer relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+          className="cursor-pointer relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
         >
           <span
             aria-hidden
-            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+            className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
           ></span>
           <button className="flex items-center px-2 py-1 space-x-1">
             <svg

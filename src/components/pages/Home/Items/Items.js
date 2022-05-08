@@ -18,7 +18,7 @@ const Items = ({item}) => {
                 </div>
                 <div className="my-4">
                   <div>
-                    <h3 class="text-2xl font-medium text-slate-600 pb-2">
+                    <h3 className="text-2xl font-medium text-slate-600 pb-2">
                      
                         <span aria-hidden="true" className="absolute " />
                         {item.productName}
@@ -27,15 +27,15 @@ const Items = ({item}) => {
                     
                   </div>
                   <div className='flex justify-between'>
-                  <span class=" flex tracking-wider text-white bg-orange-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
+                  <span className=" flex tracking-wider text-white bg-orange-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
                   {item.quantity}
 </span>
 
-<span class=" flex items-center tracking-wider text-white bg-red-500 px-2 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
+<span className=" flex items-center tracking-wider text-white bg-red-500 px-2 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
   <CurrencyDollarIcon className="h-5 w5" ></CurrencyDollarIcon>{item.price}
 </span>
 
-<span class="flex tracking-wider text-white bg-blue-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
+<span className="flex tracking-wider text-white bg-blue-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
 <BeakerIcon className="h-5 w-5 text-white"/> {item.supplier}
 </span>
                   </div>

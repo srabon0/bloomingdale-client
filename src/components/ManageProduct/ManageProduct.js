@@ -55,7 +55,7 @@ const ManageProduct = () => {
       </form> */}
       <div
         className="w-full dark:bg-coolGray-500"
-        style={{"backgroundImage": `url(${img})` ,"backgroundPosition": "center center","backgroundBlendMode": "multiply","background-size": "cover"}}
+        style={{"backgroundImage": `url(${img})` ,"backgroundPosition": "center center","backgroundBlendMode": "multiply","backgroundSize": "cover"}}
       >
         <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
           <h1 className="text-5xl antialiased font-semibold leading-none text-center dark:text-coolGray-100">

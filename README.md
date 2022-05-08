@@ -1,18 +1,17 @@
-# Getting Started with Create React App
+# Getting Started with BroomingDale Inventory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-srabon0).
 
-## Available Scripts
+## Short Intro
 
-In the project directory, you can run:
+In the project , you can have the basic functionality of an Inventory management system:
 
-### `npm start`
+### `Live site`
 
-Runs the app in the development mode.\
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+See the demo in the link.
 
 ### `npm test`
 
