@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useItems from "../hooks/useItems";
+import { Confirm } from 'react-st-modal';
 
 const SingleItem = ({ item }) => {
   const [items, setItems] = useItems();
@@ -9,9 +10,8 @@ const SingleItem = ({ item }) => {
   const navigate = useNavigate();
   const handleItemDelete = async (id) => {
     const url = "https://glacial-dawn-34678.herokuapp.com/delete";
-    const proceed = window.confirm(
-      "Are you sure you want to delete this item?"
-    );
+    const proceed = await Confirm('Are you Sure you want to Delete?', 
+    'Warning');
     if (proceed) {
       const result = await axios.delete(url, { data: { id: id } });
       console.log(result.data);
@@ -88,6 +88,7 @@ const SingleItem = ({ item }) => {
           </button>
         </span>
       </td>
+    
     </tr>
   );
 };
