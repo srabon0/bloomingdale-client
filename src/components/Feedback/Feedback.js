@@ -6,7 +6,7 @@ const Feedback = () => {
     const [message,setMessage] = useState([])
    useEffect(()=>{
        const getmessage = async()=>{
-           const url = "http://localhost:5000/feedback"
+           const url = "https://glacial-dawn-34678.herokuapp.com/feedback"
            try {
             const {data} = await axios.get(url);
             setMessage(data)

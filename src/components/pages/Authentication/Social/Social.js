@@ -19,7 +19,7 @@ const Social = () => {
         return <Loading></Loading>
       }
       if (googleUser || githubUser) {
-        const url = "http://localhost:5000/login";
+        const url = "https://glacial-dawn-34678.herokuapp.com/login";
         const genToken = async()=>{
           console.log(githubUser);
           const data = {email:  googleUser? googleUser?.user.email : githubUser?._tokenResponse.email }

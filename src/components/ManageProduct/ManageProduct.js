@@ -43,7 +43,7 @@ const ManageProduct = () => {
   };
 
   const updateInDb = async (id, quantity) => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://glacial-dawn-34678.herokuapp.com/inventory/${id}`;
     const result = await axios.put(url, quantity);
     console.log(result.data);
   };

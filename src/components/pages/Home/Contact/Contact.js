@@ -14,7 +14,7 @@ const Contact = () => {
       const email = emailRef.current.value;
       const message = messageRef.current.value;
       const messageInfo = { name: name, email: email, message: message };
-      const url = `http://localhost:5000/feedback`;
+      const url = `https://glacial-dawn-34678.herokuapp.com/feedback`;
       try {
         const {data} = await axios.post(url,messageInfo);
         console.log(data);

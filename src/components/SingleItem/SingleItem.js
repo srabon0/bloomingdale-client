@@ -8,7 +8,7 @@ const SingleItem = ({ item }) => {
   const { _id, productName, price, quantity, img } = item;
   const navigate = useNavigate();
   const handleItemDelete = async (id) => {
-    const url = "http://localhost:5000/delete";
+    const url = "https://glacial-dawn-34678.herokuapp.com/delete";
     const proceed = window.confirm(
       "Are you sure you want to delete this item?"
     );

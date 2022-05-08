@@ -28,7 +28,7 @@ const AddProduct = () => {
       mail:user?.email
 
     }
-    const url = "http://localhost:5000/addproduct"
+    const url = "https://glacial-dawn-34678.herokuapp.com/addproduct"
     if(price && quantity && productName){
       const result = await axios.post(url,{data:data})
       alert('Product added Successfully')

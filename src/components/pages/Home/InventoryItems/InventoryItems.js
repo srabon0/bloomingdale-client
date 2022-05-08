@@ -12,7 +12,7 @@ import LoadOrItem from '../../../LoadOrItem/LoadOrItem'
     useEffect (() => {
       const getItems =  async () =>{
         const result = await axios.get (
-          `http://localhost:5000/items` 
+          `https://glacial-dawn-34678.herokuapp.com/items` 
           )
         console.log(result.data)
   

@@ -25,7 +25,7 @@ const Login = () => {
     return <Loading></Loading>
   }
   if (user) {
-    const url = "http://localhost:5000/login";
+    const url = "https://glacial-dawn-34678.herokuapp.com/login";
     const genToken = async()=>{
       const data = {email:user.user.email}
       const result =await axios.post(url,data);

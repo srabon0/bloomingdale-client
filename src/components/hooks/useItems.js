@@ -4,21 +4,28 @@ import { ItemContext } from "../../App";
 
 const useItems = ()=>{
     const [items,setItems] = useContext(ItemContext)
-    const [loaded,setLoaded] = useState(false)
+    
 
     useEffect(()=>{
+
+        const getItems = async()=>{
+            const url = "https://glacial-dawn-34678.herokuapp.com/items"
+            try {
+             const {data} = await axios.get(url);
+             setItems(data)
+             console.log(data)
+            } catch (error) {
+ 
+                
+            }
+ 
+        }
+        getItems();
         
-        const url = "http://localhost:5000/items";
-        axios.get(url)
-        .then(res=>{
-            console.log(res.data)
-            setItems(res.data);
-            setLoaded(true)
-           
-        })
+    
         
     },[]);
-    return [items,setItems,loaded,setLoaded]
+    return [items,setItems]
 }
 
 export default useItems;
