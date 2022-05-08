@@ -15,7 +15,7 @@ const Footer = () => {
                     alt="thsirt"
                   />
                     </div>
-                    <span className="self-center text-2xl font-semibold">BloomingDale</span>
+                    <span className="self-center text-2xl font-semibold text-blue-900">BloomingDale</span>
                 </a>
             </div>
             <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
