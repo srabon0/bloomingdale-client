@@ -21,6 +21,8 @@ export const ItemContext = createContext();
 function App() {
   const [items,setItems] = useState([]);
   return (
+    <div className="font-sans">
+      
     <ItemContext.Provider value={[items,setItems]}>
       <Header></Header>
       <Routes>
@@ -67,6 +69,7 @@ function App() {
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </ItemContext.Provider>
+    </div>
   );
 }
 

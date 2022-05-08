@@ -9,7 +9,8 @@ In the project , you can have the basic functionality of an Inventory management
 ### `Live site`
 
 
-Open [https://bloomingdale-inventory.web.app/](https://bloomingdale-inventory.web.app/) to view it in your browser.
+Open [BloomingDale](https://bloomingdale-inventory.web.app/) to view it in your browser.
+Open [BloomingDale Server](https://glacial-dawn-34678.herokuapp.com/) to view it in your browser.
 
 See the demo in the link.
 
