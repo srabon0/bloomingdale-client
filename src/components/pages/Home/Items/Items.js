@@ -26,7 +26,7 @@ const Items = ({ item }) => {
           <span
             className=" flex w-1/3 tracking-wider text-white bg-orange-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold"
             title=""
-          >
+          >Q:
             {item.quantity}
           </span>
 
