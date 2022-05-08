@@ -3,13 +3,16 @@ import Banner from '../Banner/Banner'
 import InventoryItems from '../InventoryItems/InventoryItems';
 import Stat from '../Stat/Stat';
 import Contact from '../Contact/Contact';
+import CTA from "../CTA/CTA";
 const Home = () => {
     return (
         <div>
            <Banner></Banner>
            <InventoryItems></InventoryItems>
            <Stat></Stat>
+           <CTA></CTA>
            <Contact></Contact>
+           
         </div>
     );
 };

@@ -41,14 +41,14 @@ export default function Header() {
     }
   
   return (
-    <Disclosure as="nav" className="bg-slate-700">
+    <Disclosure as="nav" className="bg-blue-900">
       {({ open }) => (
         <>
           <nav className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -74,8 +74,8 @@ export default function Header() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex md:mt-1 space-x-4">
-                      <NavLink style={navLinkStyles} className="text-gray-300 hover:bg-gray-700  hover:text-white" to='/' > Home </NavLink>
-                      <NavLink style={navLinkStyles} to='/blog' > Blog </NavLink>
+                      <NavLink style={navLinkStyles} className="text-gray-300   hover:text-white" to='/' > Home </NavLink>
+                      <NavLink style={navLinkStyles} className="text-gray-300   hover:text-white" to='/blog' > Blog </NavLink>
                 
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Header() {
                   as={Link}
                   to='/manage'
                  
-                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300  hover:text-white"
                 >Manage Items
                   
                  
@@ -96,7 +96,7 @@ export default function Header() {
                   as={Link}
                   to='/addproduct'
                  
-                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300  hover:text-white"
                 >Add Items
                   
                  
@@ -105,7 +105,7 @@ export default function Header() {
                   as={Link}
                   to='/myitems'
                  
-                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300  hover:text-white"
                 >My items
                   
                  
@@ -115,7 +115,7 @@ export default function Header() {
                   as={Link}
                   to='/feedback'
                  
-                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300 hover:bg-gray-700 hover:text-white"
+                  style={navLinkStyles} className="hidden md:block mx-5 text-gray-300  hover:text-white"
                 >Feedback
                   
                  
@@ -186,8 +186,8 @@ export default function Header() {
                  </Transition>
                </Menu>:
                <>
-               <NavLink   to='/login'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300 hover:bg-gray-700 hover:text-white" >Login</NavLink>
-               <NavLink   to='/signup'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300 hover:bg-gray-700 hover:text-white" >SignUp</NavLink>
+               <NavLink   to='/login'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300  hover:text-white" >Login</NavLink>
+               <NavLink   to='/signup'  style={navLinkStyles} className="hidden md:block md:mx-5 text-gray-300  hover:text-white" >SignUp</NavLink>
                
                </>}
               </div>
@@ -198,7 +198,7 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <ul>
-                  <li className='border-2 hover:border-l-green-300 border-transparent  p-1 rounded-md transition duration-300 ' ><NavLink style={navLinkStyles} className="text-gray-300 hover:bg-gray-700 hover:text-white" to='/' > Home </NavLink>
+                  <li className='border-2 hover:border-l-green-300 border-transparent  p-1 rounded-md transition duration-300 ' ><NavLink style={navLinkStyles} className="text-gray-300  hover:text-white" to='/' > Home </NavLink>
                       </li>
                       <li  className='border-2 hover:border-l-green-300 border-transparent p-1 rounded-md   transition duration-300'>
                       <NavLink style={navLinkStyles} to='/blog' > Blog </NavLink>
