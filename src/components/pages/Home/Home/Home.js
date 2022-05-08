@@ -5,7 +5,7 @@ import Stat from '../Stat/Stat';
 import Contact from '../Contact/Contact';
 import CTA from "../CTA/CTA";
 import PageTitle from '../../../Shared/PageTitle/PageTitle'
-import ItemTable from '../../../ItemTable/ItemTable.js'
+
 const Home = () => {
     return (
         <div>
