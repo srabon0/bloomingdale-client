@@ -1,8 +1,10 @@
 import React from 'react';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Profile = () => {
     return (
-        <div>
+        <div className='h-[85vh]'>
+			<PageTitle title="Profile"></PageTitle>
             <div className="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-coolGray-900 dark:text-coolGray-100">
 	<div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
 		<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" className="object-cover object-center w-full h-full rounded dark:bg-coolGray-500"/>

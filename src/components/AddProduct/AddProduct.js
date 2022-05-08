@@ -3,6 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const AddProduct = () => {
   const [user,loading,error] = useAuthState(auth);
@@ -37,6 +38,7 @@ const AddProduct = () => {
   };
   return (
     <section className="p-6 dark:bg-coolGray-800 dark:text-coolGray-50">
+      <PageTitle title="Add Item"></PageTitle>
       <form
         onSubmit={handleAddProduct}
         className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid"

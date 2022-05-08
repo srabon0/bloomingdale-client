@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import auth from '../../firebase.init';
 import ItemUpDel from "../pages/ItemUpDel/ItemUpDel";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 
 const MyItems = () => {
@@ -42,6 +43,7 @@ const MyItems = () => {
     
   return (
     <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100 mx-auto">
+      <PageTitle title="My Items"></PageTitle>
     <h2 className="text-xl font-semibold">My Items</h2>
     <ul className="flex flex-col divide-y divide-coolGray-700">
       {items.map((item) => (

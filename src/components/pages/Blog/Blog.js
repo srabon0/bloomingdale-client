@@ -1,8 +1,10 @@
 import React from "react";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Blog = () => {
   return (
     <section class="dark:bg-coolGray-800 dark:text-coolGray-100">
+      <PageTitle title="Blog"></PageTitle>
       <div class="container mx-auto flex flex-col p-6">
         <h2 class="py-4 text-3xl font-bold text-center">The Questions</h2>
         <div class="divide-y divide-coolGray-700">

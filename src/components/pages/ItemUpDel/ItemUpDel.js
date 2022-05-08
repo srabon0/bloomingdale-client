@@ -1,10 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import useItems from "../../hooks/useItems";
 
 const ItemUpDel = ({ item }) => {
   const [items, setItems] = useItems()
+  const { _id, productName, price, quantity, img } = item;
   const navigate = useNavigate();
   const handleItemDelete = async (id) => {
     const url = "http://localhost:5000/delete";
@@ -18,7 +19,7 @@ const ItemUpDel = ({ item }) => {
       setItems(remainder);
     }
   };
-  const { _id, productName, price, quantity, img } = item;
+  
   return (
     <li className="flex flex-col py-6 sm:flex-row sm:justify-between mx-auto">
       <div className="flex w-full space-x-2 sm:space-x-4">

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Feedback = () => {
     const [message,setMessage] = useState([])
@@ -21,8 +22,9 @@ const Feedback = () => {
 
     return (
         <section class="text-gray-600 body-font">
+          <PageTitle title="Feedback &amp;  message"></PageTitle>
   <div class="container px-5 py-24 mx-auto">
-    <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">FeedBacks &amp; Message</h1>
+    <h1 class="text-3xl font-medium title-font text-blue-900 mb-12 text-center">FeedBacks &amp; Message</h1>
     <div class="flex flex-wrap -m-4">
       
         {
