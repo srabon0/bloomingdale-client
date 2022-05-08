@@ -15,8 +15,7 @@ const Home = () => {
            <Stat></Stat>
            <CTA></CTA>
            <Contact></Contact>
-         
-           
+        
         </div>
     );
 };

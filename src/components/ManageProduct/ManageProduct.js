@@ -194,12 +194,8 @@ const ManageProduct = () => {
               </span>
             </div>
             <p className="leading-relaxed">
-              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-              sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-              seitan poutine tumeric. Gastropub blue bottle austin listicle
-              pour-over, neutra jean shorts keytar banjo tattooed umami
-              cardigan.
+            The Design {item.productName} is great for those looking for a soft, breathable material. It has a tagless neckline, so it won't irritate your skin, and it's designed to have a slim fit.
+            
             </p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex flex-col">

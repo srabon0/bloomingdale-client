@@ -1,6 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
+    var year = new Date().getFullYear()
     return (
         <footer className="px-4 divide-y dark:bg-coolGray-800 dark:text-coolGray-100">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -18,24 +20,24 @@ const Footer = () => {
             </div>
             <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                 <div className="space-y-3">
-                    <h3 className="tracking-wide uppercase dark:text-coolGray-50">Product</h3>
+                    <h3 className="tracking-wide uppercase dark:text-coolGray-50">an inventory system</h3>
                     <ul className="space-y-1">
                         <li>
-                            <a rel="noopener noreferrer" href="#">Features</a>
+                            <NavLink rel="noopener noreferrer" to="/">Home</NavLink>
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Integrations</a>
+                            <NavLink rel="noopener noreferrer" to="/blogs">Blog</NavLink>
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Pricing</a>
+                            <NavLink rel="noopener noreferrer" to="/items">Items</NavLink>
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">FAQ</a>
+                            <NavLink rel="noopener noreferrer" to="/profile">Profile</NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="space-y-3">
-                    <h3 className="tracking-wide uppercase dark:text-coolGray-50">Company</h3>
+                    <h3 className="tracking-wide uppercase dark:text-coolGray-50">Terms</h3>
                     <ul className="space-y-1">
                         <li>
                             <a rel="noopener noreferrer" href="#">Privacy</a>
@@ -81,7 +83,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="py-6 text-sm text-center dark:text-coolGray-400">© 1968 Company Co. All rights reserved.</div>
+        <div className="py-6 text-sm text-center dark:text-coolGray-400">All rights reserved. Amadeus-Srabon © {year}</div>
     </footer>
     );
 };
